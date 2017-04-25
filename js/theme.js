@@ -74,8 +74,17 @@ function ThemeNav () {
             })
 
         // Make tables responsive
-        $("table.docutils:not(.field-list)")
+        $("table.docutils:not(.field-list):not(.footnote)")
             .wrap("<div class='wy-table-responsive'></div>");
+
+        // Handle footnote tables separately so that they are not too far apart
+        $("table.docutils.footnote")
+            .wrap("<div class='wy-table-responsive wy-table-responsive-footnote'></div>");
+
+        // Wrap all references with <sup>, it's the only non-hackish way to
+        // not mess up line-height
+        $(".footnote-reference, .citation-reference")
+            .wrap("<sup></sup>");
 
         // Add expand links to all parents of nested ul
         $('.wy-menu-vertical ul').not('.simple').siblings('a').each(function () {

@@ -13,6 +13,13 @@
 //    4. If you have changes for mobile/tablet, put them at the bottom of the sass file.
 // --------------------------------------------------------------------------------------------------------------------
 
+html
+  background: $section-background-color
+
+body
+  font-size: $base-font-size
+  background: $section-background-color
+
 .rst-content
   // Sphinx by default applies HxW style attributes to images. This fixes that oversite.
   img
@@ -24,11 +31,19 @@
 
   div.figure
     margin-bottom: $base-line-height
+    width: 85%
     p.caption
+      margin-top: $base-line-height / 2
       font-style: italic
+      span.caption-number
+        margin-right: 10px
+        font-style: normal
 
   div.figure.align-center
     text-align: center
+
+  div.math
+    font-size: 100%
 
   // Usually it's a good idea to give images some space.
   .section > img,   .section > a > img
@@ -47,8 +62,11 @@
     margin-left: $base-line-height
     line-height: $base-line-height
     margin-bottom: $base-line-height
+  div[class^='highlight'] pre
+    font-size: 12pt
   .literal-block, pre.literal-block
     @extend .codeblock
+    padding: $base-line-height / 2 $base-line-height / 2
   // These are the various note pullouts that sphinx applies
   .note, .attention, .caution, .danger, .error, .hint, .important, .tip, .warning, .seealso, .admonition-todo
     @extend .wy-alert
@@ -106,11 +124,12 @@
     @extend h2
 
   // This is the #href that shows up on hover. Sphinx's is terrible so I hack it away.
-  h1, h2, h3, h4, h5, h6, dl dt, p.caption
+  h1, h2, h3, h4, h5, h6, dl dt, p.caption, span.eqno
+    font-family: $base-font-family
     .headerlink
       display: none
       visibility: hidden
-      font-size: 14px
+      font-size: 16px
       @extend .fa
       &:after
         visibility: visible
@@ -118,6 +137,10 @@
         font-family: FontAwesome
         display: inline-block
     &:hover .headerlink
+      display: inline-block
+
+  span.eqno
+    .headerlink
       display: inline-block
   
   .centered
@@ -153,11 +176,6 @@
     font-weight: bold
     padding: 0 $base-line-height / 4
 
-  // These are the little citation links [1] that show up within paragraphs.
-  .footnote-reference, .citation-reference
-    vertical-align: super
-    font-size: 90%
-
   // Tables! Sphinx LOVES TABLES. Most of wyrm assumes you're only going to use a table as a table
   // so I have to write a bunch of unique stuff for Sphinx to style them up differently like it's 2003.
   table.docutils.citation, table.docutils.footnote
@@ -168,6 +186,8 @@
       border: none
       background-color: transparent !important
       white-space: normal
+    td p
+      font-size: 100%
     td.label
       padding-left: 0
       padding-right: 0
@@ -189,7 +209,7 @@
       display: inline-block
     .field-name
       padding-right: 10px
-      text-align: left
+      text-align: right
       white-space: nowrap
     .field-body
       text-align: left

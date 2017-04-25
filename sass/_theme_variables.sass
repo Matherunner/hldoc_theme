@@ -2,15 +2,47 @@
 // that are set in wyrm_core/wy_variables.sass. You'll find wyrm in bower_components if you're looking
 // for a reference.
 
+// Solarized colors
+$base03:                              #002b36
+$base02:                              #073642
+$base01:                              #586e75
+$base00:                              #657b83
+$base0:                               #839496
+$base1:                               #93a1a1
+$base2:                               #eee8d5
+$base3:                               #fdf6e3
+$yellow:                              #b58900
+$orange:                              #cb4b16
+$red:                                 #dc322f
+$magenta:                             #d33682
+$violet:                              #6c71c4
+$blue:                                #268bd2
+$cyan:                                #2aa198
+$green:                               #859900
+
+$text-color:                          $base00
+$text-light:                          $base1
+$text-dark:                           $base01
+$text-medium:                         $base01
+
+$link-color:                          $blue
+$section-background-color:            $base3
+
 $font-awesome-dir:                    "../fonts/"
 $static-img:                          "../img/"
 $mathjax-color:                       $text-color
 
 $headerlink-color:                    $text-color
 
+// Table colors
+$table-border-color:                  darken($section-background-color,15%)
+
 // Code colors
+$text-code-color:                     $red
 $text-viewcode-color:                 $green
 $text-codexref-color:                 $text-color
+$text-code-background-color:          $section-background-color
+$text-code-border-color:              $table-border-color
 
 // Definition list colors
 $class-color:                         $blue
@@ -24,6 +56,7 @@ $footer-color:                        $text-medium
 
 // Menu colors
 $menu-vertical-background-color:      $section-background-color
+$menu-background-color:               $section-background-color
 
 // Menu text colors
 $menu-color:                          $gray
@@ -38,11 +71,12 @@ $menu-link-dark:                      $text-dark
 $menu-link-medium:                    $text-medium
 $menu-link-light:                     $text-light
 $menu-link-active:                    $white
+$menu-logo-color:                     $blue
 
 // Navigation colors
 $nav-background-color:                $menu-background-color
-$nav-search-background-color:         $blue
-$nav-search-color:                    $section-background-color
+$nav-search-background-color:         $section-background-color
+$nav-search-color:                    $text-color
 $nav-link-color:                      $blue
 $nav-link-color-visited:              $purple
 $nav-link-color-hover:                lighten($nav-link-color, 6%) !default
@@ -56,7 +90,9 @@ $sidebar-title-background-color:      $table-border-color
 // Sphinx highlight color
 $highlight-color:                     $yellow
 
-$base-font-family:                    "Lato", "proxima-nova", "Helvetica Neue", Arial, sans-serif
+$base-font-size:                      15pt
+$base-line-height:                    22pt
+$base-font-family:                    "Libre Caslon Text", "Georgia", "Times New Roman", serif
 $custom-font-family:                  "Roboto Slab", "ff-tisa-web-pro", "Georgia", Arial, sans-serif
 $custom-font-family2:                 Georgia, serif
 $code-font-family:                    Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace
